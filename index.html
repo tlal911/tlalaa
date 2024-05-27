@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>مفكرة</title>
+    <style>
+            body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #note, #url {
+            width: 80%;
+            padding: 10px;
+            margin: 10px auto;
+            display: block;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 5px auto;
+            max-width: 80%;
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        #search {
+            width: 80%;
+            padding: 10px;
+            margin: 10px auto;
+            display: block;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            }
+        /* إضافة أسلوب CSS الخاص بك هنا */
+    </style>
+</head>
+<body>
+    <h1>موسوعة</h1>
+        <h1>不ألخـ⁹¹¹ـالـدي不</h1>
+
+    <label for="note">العنوان</label>
+    <input type="text" id="note" placeholder="اكتب هنا">
+    <label for="url">الرابط</label>
+    <input type="text" id="url" placeholder="اكتب هنا">
+    <button onclick="حفظمذكرة()">حفظ المذكرة</button>
+
+    <input type="text" id="search" placeholder="ابحث عن مذكرة">
+    <ul id="قائمة-المذكرات">
+    </ul>
+
+    <script>
+        function حفظمذكرة() {
+            var عنوان_الموقع = document.getElementById("note").value;
+            var رابط_الموقع = document.getElementById("url").value;
+
+            var رابط = document.createElement("a");
+            رابط.href = رابط_الموقع;
+            رابط.textContent = عنوان_الموقع;
+
+            var عنصر_المذكرة = document.createElement("li");
+            عنصر_المذكرة.appendChild(رابط);
+            document.getElementById("قائمة-المذكرات").appendChild(عنصر_المذكرة);
+
+            document.getElementById("note").value = "";
+            document.getElementById("url").value = "";
+        }
+
+        // دالة البحث
+        function بحث() {
+            var كلمة_البحث = document.getElementById("search").value;
+            var المذكرات = document.getElementById("قائمة-المذكرات").getElementsByTagName("li");
+
+            for (var i = 0; i < المذكرات.length; i++) {
+                var عنوان_المذكرة = المذكرات[i].getElementsByTagName("a")[0].textContent;
+                if (عنوان_المذكرة.includes(كلمة_البحث)) {
+                    المذكرات[i].style.display = "block";
+                } else {
+                    المذكرات[i].style.display = "none";
+                }
+            }
+        }
+
+        // دالة لإضافة المذكرة إلى القائمة
+        function أضفمذكرة(مذكرة) {
+            var رابط = document.createElement("a");
+            رابط.href = مذكرة.رابط;
+            رابط.textContent = مذكرة.عنوان;
+
+            var عنصر_المذكرة = document.createElement("li");
+            عنصر_المذكرة.appendChild(رابط);
+            document.getElementById("قائمة-المذكرات").appendChild(عنصر_المذكرة);
+        }
+
+        // إضافة المذكرات الجديدة
+        var مذكرة1 = {
+            عنوان: "موقع (1)",
+            رابط: "https://ar.mytempsms.com/receive-sms-online/country.html"
+        };
+        أضفمذكرة(مذكرة1);
+
+        var مذكرة2 = {
+            عنوان: "الموقع(2)",
+            رابط: "https://receivefreesms.co.uk/"
+        };
+        أضفمذكرة(مذكرة2);
+
+        var مذكرة3 = {
+            عنوان: "الموقع(3)",
+            رابط: "https://smstome.com/"
+        };
+        أضفمذكرة(مذكرة3);
+
+        var مذكرة4 = {
+            عنوان: "الموقع(4)",
+            رابط: "https://smscodeonline.com/virtual-phone"
+        };
+        أضفمذكرة(مذكرة4);
+
+        var مذكرة5 = {
+            عنوان: "الموقع(5)",
+            رابط: "https://www.freereceivesms.com/en/countrys/"
+        };
+        أضفمذكرة(مذكرة5);
+
+        var مذكرة6 = {
+            عنوان: "الموقع(6)",
+            رابط: "https://temp-number.com/"
+        };
+        أضفمذكرة(مذكرة6);
+
+        var مذكرة7 = {
+            عنوان: "الموقع(7)",
+            رابط: "https://onlinesim.io/free_numbers/russia"
+        };
+        أضفمذكرة(مذكرة7);
+
+        var مذكرة8 = {
+            عنوان: "الموقع(8)",
+            رابط: "https://online-sms.org/ar"
+        };
+        أضفمذكرة(مذكرة8);
+
+        var مذكرة9 = {
+            عنوان: "الموقع(9)",
+            رابط: "https://getfreesmsnumber.com/virtual-phone"
+        };
+        أضفمذكرة(مذكرة9);
+
+        var مذكرة10 = {
+            عنوان: "الموقع(10)",
+            رابط: "https://https://quackr.io/temporary-numbers/sweden"
+        };
+        أضفمذكرة(مذكرة10);
+
+        var مذكرة11 = {
+            عنوان: "الموقع(11)",
+            رابط: "https://receive-sms-free.cc/regions/"
+        };
+        أضفمذكرة(مذكرة11);
+
+        var مذكرة12 = {
+            عنوان: "(12)الموقع",
+            رابط: "https://receive-sms.cc/Countries/"
+        };
+        أضفمذكرة(مذكرة12);
+
+        var مذكرة13 = {
+            عنوان: "الموقع(13)",
+            رابط: "https://jieduanxin.com/Countries/"
+        };
+        أضفمذكرة(مذكرة13);
+
+                var مذكرة1 = {
+            عنوان: "موقع (14)",
+            رابط: "https://yunduanxin.net/Countries/"
+        };
+        أضفمذكرة(مذكرة1);
+
+        var مذكرة2 = {
+            عنوان: "الموقع(15)",
+            رابط: "https://temporary-phone-number.com/countrys/"
+        };
+        أضفمذكرة(مذكرة2);
+
+        var مذكرة3 = {
+            عنوان: "الموقع(16)",
+            رابط: "https://in.bestreceivesms.com/country"
+        };
+        أضفمذكرة(مذكرة3);
+
+        var مذكرة4 = {
+            عنوان: "الموقع(17)",
+            رابط: "https://nl.mytempsms.com/receive-sms-online/country.html"
+        };
+        أضفمذكرة(مذكرة4);
+
+        var مذكرة5 = {
+            عنوان: "الموقع(18)",
+            رابط: "https://smsnator.online/"
+        };
+        أضفمذكرة(مذكرة5);
+
+        var مذكرة6 = {
+            عنوان: "الموقع(19)",
+            رابط: "https://smsnator.online/"
+        };
+        أضفمذكرة(مذكرة6);
+
+        var مذكرة7 = {
+            عنوان: "الموقع(20)",
+            رابط: "https://www.receivesms.co/"
+        };
+        أضفمذكرة(مذكرة7);
+
+        // إضافة المذكرات الأخرى هنا
+
+        // دعوة دالة البحث عندما يتم النقر على زر البحث
+        document.getElementById("search").addEventListener("input", بحث);
+    </script>
+</body>
+</html>
